@@ -63,7 +63,8 @@ def get_shops_by_publisher():
     # Вывод результатов
     print(f"\nДанные о продажах книг издателя '{publisher.name}':\n")
     for title, shop_name, price, date_sale in query.all():
-        print(f"{title} | {shop_name} | {price} | {date_sale}")
+        formatted_date = date_sale.strftime("%d.%m.%Y %H:%M:%S")
+        print(f"{title} | {shop_name} | {price} | {formatted_date}")
 
 
 get_shops_by_publisher()
